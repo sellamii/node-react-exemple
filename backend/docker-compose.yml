@@ -1,0 +1,29 @@
+version: '2'
+services:
+  
+  web:
+    build: 
+      dockerfile: DockerFile
+      context: .
+    command: node index.js
+    volumes:
+      - .:/site-web/tpzied
+    container_name: tpnodexpress
+    image: node:12.13.0
+    ports:
+      - "9090:9090"
+  
+    environment:
+      DATABASE_URL: postgres://zied:testtest@postgresdb:5432/mabase
+    #depends_on: 
+     # - postgres  
+  
+  postgres:
+    container_name: postgresdb
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: zied
+      POSTGRES_DB: mabase
+      POSTGRES_PASSWORD: testtest
