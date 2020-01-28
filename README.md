@@ -29,7 +29,7 @@ Getting Started
     Clone this project
 
   
-  git clone https://github.com/sellamii/react-node-example.git
+  git clone https://github.com/sellamii/node-react-exemple.git
   cd react-node-example
 
     npm install
